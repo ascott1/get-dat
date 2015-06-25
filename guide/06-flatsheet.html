@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <title>Get Dat</title>
+  <style>
+    body {
+      font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.65em;
+      font-size: 15px;
+    }
+
+    .site-header {
+      margin: 20px 0;
+      padding: 15px 0;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .site-header-text {
+      font-size: 50px;
+      letter-spacing: 2px;
+      color: #333;
+      line-height: 1em;
+      font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    }
+
+    .site-footer {
+      font-size: 12px;
+      color: #999;
+      margin-top: 20px;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      margin: auto;
+      max-width: 640px;
+    }
+
+    .navlink {
+      display: inline-block;
+      width: 49%;
+    }
+
+    .nextp { text-align: right; }
+
+    code, pre {
+      background: #f5f5f5;
+      border-radius: 2px;
+      font-size: 14px;
+      padding: 3px;
+    }
+
+    pre code { padding: 0;}
+
+    a {
+      color: #08c;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <a class="site-header-text" href="./index.html">Get Dat</a>
+    </header>
+
+    <section class="content">
+
+      <h1 id="editing-data-with-flatsheet">Editing data with flatsheet</h1>
+<p><a href="http://flatsheet.io/">Flatsheet</a> is an open source data editor application.</p>
+<p>For this workshop we have prepared <code>data-editor</code>, a standalone version of Flatsheet</p>
+<p>(If doing this on your own machine you can get flatsheet by running <code>npm install data-editor -g</code>)</p>
+<p>First lets export a CSV of the eukaryota data that you cloned in the last section.</p>
+<pre><code>dat export -d organisms -f csv &gt; organisms.csv
+</code></pre><p>Now you should have a file called <code>organisms.csv</code>.</p>
+<p>To edit the file using <code>data-editor</code>, run this commend:</p>
+<pre><code>data-editor organisms.csv 80
+</code></pre><p>(If running on your machine you can leave off the 80 above and then open <code>http://localhost:4455</code>)</p>
+<p>Now open the URL from <code>welcome.txt</code> in a new tab. You should hopefully see some data!</p>
+
+        <a class="lastp navlink" href="05-dat-clone.html">Previous: 05-dat-clone</a>
+        <a class="nextp navlink" href="07-thanks.html">Next: 07-thanks</a>
+    </section>
+
+    <footer class="site-footer">
+      <a href="https://github.com/maxogden/dat">dat on github</a>    </footer>
+  </div>
+</body>
+</html>

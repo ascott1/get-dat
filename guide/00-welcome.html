@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+  <title>Get Dat</title>
+  <style>
+    body {
+      font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.65em;
+      font-size: 15px;
+    }
+
+    .site-header {
+      margin: 20px 0;
+      padding: 15px 0;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .site-header-text {
+      font-size: 50px;
+      letter-spacing: 2px;
+      color: #333;
+      line-height: 1em;
+      font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    }
+
+    .site-footer {
+      font-size: 12px;
+      color: #999;
+      margin-top: 20px;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      margin: auto;
+      max-width: 640px;
+    }
+
+    .navlink {
+      display: inline-block;
+      width: 49%;
+    }
+
+    .nextp { text-align: right; }
+
+    code, pre {
+      background: #f5f5f5;
+      border-radius: 2px;
+      font-size: 14px;
+      padding: 3px;
+    }
+
+    pre code { padding: 0;}
+
+    a {
+      color: #08c;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <a class="site-header-text" href="./index.html">Get Dat</a>
+    </header>
+
+    <section class="content">
+
+      <p><strong>get-dat</strong> is a tutorial that teaches you how to work with datasets using <a href="http://dat-data.com" target="_blank">dat</a>.</p>
+<p>Dat is still very much in the early stages of development, but we hope to enable some really cool collaboration workflows to make sharing and improving datasets easy.</p>
+<p>In this panel you will find step by step instructions for this tutorial. There are navigation links at the <strong>bottom</strong> of each page.</p>
+<p>On the bottom there is a file browser and text editor that is <strong>connected to the same server</strong> that the terminal is logged on to.</p>
+<p>You can double-click files in the file browser to open them, and editing text in the text editor <strong>auto-saves</strong> your changes to the server.</p>
+<p><strong>When you leave or close this webpage your server will be shut down.</strong></p>
+<p>You&#39;ll need to install dat on your local machine so that you can clone your dataset onto your personal computer.</p>
+<p>Installing dat takes 2 steps:</p>
+<ul>
+<li>First, <a href="http://nodejs.org" target="_blank">download the node.js installer for your OS</a> and walk through the installer program. This will install the <code>node</code> and <code>npm</code> commands onto your computer.</li>
+<li>Second, open your terminal program (<code>Terminal.app</code> on Mac, <code>CMD.exe</code> on Windows) and install dat by running <code>npm install dat -g</code>. This make take a few minutes.</li>
+</ul>
+<p>If you get an <code>EACCESS</code> error you can try running the install command again with more permissions: <code>sudo npm install dat -g</code></p>
+<p>When the install command finishes you should be able to run the <code>dat</code> command in your terminal and see output like:</p>
+<pre><code>$ dat
+usage: dat &lt;command(s)&gt; [-flag] [--key=value]
+
+commands:
+  init      initialize a new dat in a directory
+  checkout  dat will operate at a particular fork
+  add       import a file into dat
+  push      push data to a remote dat
+  ... etc
+</code></pre><p>Ok, now we&#39;re ready to dive in!</p>
+
+        <a class="nextp navlink" href="01-init.html">Next: 01-init</a>
+    </section>
+
+    <footer class="site-footer">
+      <a href="https://github.com/maxogden/dat">dat on github</a>    </footer>
+  </div>
+</body>
+</html>

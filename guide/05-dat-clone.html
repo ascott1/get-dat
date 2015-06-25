@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <title>Get Dat</title>
+  <style>
+    body {
+      font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.65em;
+      font-size: 15px;
+    }
+
+    .site-header {
+      margin: 20px 0;
+      padding: 15px 0;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .site-header-text {
+      font-size: 50px;
+      letter-spacing: 2px;
+      color: #333;
+      line-height: 1em;
+      font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    }
+
+    .site-footer {
+      font-size: 12px;
+      color: #999;
+      margin-top: 20px;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      margin: auto;
+      max-width: 640px;
+    }
+
+    .navlink {
+      display: inline-block;
+      width: 49%;
+    }
+
+    .nextp { text-align: right; }
+
+    code, pre {
+      background: #f5f5f5;
+      border-radius: 2px;
+      font-size: 14px;
+      padding: 3px;
+    }
+
+    pre code { padding: 0;}
+
+    a {
+      color: #08c;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <a class="site-header-text" href="./index.html">Get Dat</a>
+    </header>
+
+    <section class="content">
+
+      <h1 id="dat-clone">dat clone</h1>
+<p>You can use dat to distribute datasets to others. Dat is transport agnostic, so it is well suited for typical transport protocols such as http or ssh -- which means any current authentication setup is supported.</p>
+<p>For example, once you create your dat with <code>dat init</code>, others can do <code>dat clone ssh://your-server-address/path/to/dat</code> to download a full copy of the dat, including all rows, blobs/files, and version history.</p>
+<p>For example, we host a dat dataset with some genome data in it at <a href="http://eukaryota.dathub.org" target="_blank">eukaryota.dathub.org</a>.</p>
+<p>You can click on the above link to browse the dataset from your web browser, but you can also make a clone of your dataset into your terminal by running this command:</p>
+<pre><code>dat clone http://publicbits.org:6442 eukaryota
+</code></pre><p>This should clone the dataset into a folder called <code>eukaryota</code>. You can change the folder name by changing the last argument of the <code>clone</code> command above. If you don&#39;t specify a folder name it will just use the server name as the folder name (e.g. <code>eukaryota.dathub.org</code>).</p>
+<p>In the terminal, run <code>cd eukaryota</code> to enter into the newly cloned dat.</p>
+<p>Try running <code>dat export -d organisms --limit=1</code> to print out the first row from the dataset. You should see something like this:</p>
+<pre><code class="lang-JSON">{&quot;uid&quot;:&quot;10&quot;,&quot;organism_name&quot;:&quot;Oryza sativa&quot;,&quot;organism_kingdom&quot;:&quot;Eukaryota&quot;,&quot;organism_group&quot;:&quot;&quot;,&quot;organism_subgroup&quot;:&quot;Land Plants&quot;,&quot;defline&quot;:&quot;Oryza sativa overview&quot;,&quot;projectid&quot;:9512,&quot;project_accession&quot;:&quot;PRJNA9512&quot;,&quot;status&quot;:&quot;Complete&quot;,&quot;number_of_chromosomes&quot;:&quot;12&quot;,&quot;number_of_plasmids&quot;:&quot;1&quot;,&quot;number_of_organelles&quot;:&quot;2&quot;,&quot;assembly_name&quot;:&quot;Build 4.0&quot;,&quot;assembly_accession&quot;:&quot;GCA_000005425.2&quot;,&quot;assemblyid&quot;:313038,&quot;create_date&quot;:&quot;2002/04/04 00:00&quot;,&quot;options&quot;:&quot;&quot;,&quot;weight&quot;:385,&quot;chromosome_assemblies&quot;:&quot;5&quot;,&quot;scaffold_assemblies&quot;:&quot;1&quot;,&quot;sra_genomes&quot;:&quot;0&quot;,&quot;taxid&quot;:4530,&quot;key&quot;:&quot;10&quot;}
+</code></pre>
+<h2 id="cloning-a-clone">Cloning a clone</h2>
+<p>So you&#39;ve cloned a dataset and re-hosted it. You don&#39;t own the original dataset (<code>publicbits.org:6442</code>) but you <em>do</em> own your clone. This means you can edit your copy and re-distribute your edited versions for others to clone.</p>
+<p>Now try cloning your copy of the eukaryota data. Run this command on your laptop (using your own server address from <code>welcome.txt</code>)</p>
+<pre><code>dat clone http://MY-SERVER-ADDRESS eukaryota
+</code></pre><p>(if you are on your own computer, you can go into another folder and do <code>dat clone ../path/to/original/repo eukaryota</code> to make a second clone locally in a new folder)</p>
+<p>Remember, you can pass an additional argument to clone the data into a custom folder name, otherwise it will use your server address as the folder name.</p>
+<p>If you <code>cd</code> into your newly created dat folder in your computer you should be able to do <code>dat cat</code> to print out all of the data, or <code>dat listen</code> to run a dat server locally.</p>
+
+        <a class="lastp navlink" href="04-working-with-files.html">Previous: 04-working-with-files</a>
+        <a class="nextp navlink" href="06-flatsheet.html">Next: 06-flatsheet</a>
+    </section>
+
+    <footer class="site-footer">
+      <a href="https://github.com/maxogden/dat">dat on github</a>    </footer>
+  </div>
+</body>
+</html>

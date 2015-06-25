@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+  <title>Get Dat</title>
+  <style>
+    body {
+      font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.65em;
+      font-size: 15px;
+    }
+
+    .site-header {
+      margin: 20px 0;
+      padding: 15px 0;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .site-header-text {
+      font-size: 50px;
+      letter-spacing: 2px;
+      color: #333;
+      line-height: 1em;
+      font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    }
+
+    .site-footer {
+      font-size: 12px;
+      color: #999;
+      margin-top: 20px;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      margin: auto;
+      max-width: 640px;
+    }
+
+    .navlink {
+      display: inline-block;
+      width: 49%;
+    }
+
+    .nextp { text-align: right; }
+
+    code, pre {
+      background: #f5f5f5;
+      border-radius: 2px;
+      font-size: 14px;
+      padding: 3px;
+    }
+
+    pre code { padding: 0;}
+
+    a {
+      color: #08c;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <a class="site-header-text" href="./index.html">Get Dat</a>
+    </header>
+
+    <section class="content">
+
+      <h1 id="write-some-non-tabular-data">Write some non-tabular data</h1>
+<p>So far we&#39;ve only worked with simple text-based data in the form of JSON
+objects, stored as rows inside dat. But what if you have a large non-tabular
+file that you want store in dat?</p>
+<p>To accomondate this, dat is capable of adding file attachments to datasets.
+These attachments are sometimes called blobs, which is short for &quot;binary large
+object&quot;. A blob can be any form of binary data, but for now just think
+of a blob as a file, like one you might put in Dropbox or attach to an
+email.</p>
+<h2 id="adding-blobs-to-dat">Adding blobs to dat</h2>
+<p>Let&#39;s try and attach a blob to a dataset in dat. For convenience we&#39;ve
+prepared a picture of Bob for you and put it on your server under
+<code>/pictures</code>. Let see it first. Run this:</p>
+<pre><code>picture-tube /pictures/bob.png
+</code></pre><p>(if you don&#39;t have picture-tube you can <code>npm install -g picture-tube</code> and use any png on your computer)</p>
+<p>What a good looking gentleman. Now let&#39;s attach it to the dataset we created
+in the previous exercise, containing bob&#39;s data:</p>
+<pre><code>$ dat write /pictures/bob.png --name=bob -d people
+Done writing binary data.
+Version: 8d7f4f0fdda699cce129508e7544da5c9a8631b037c26cb8ab2ff2553742b4ee
+</code></pre><p>Notice the value of <code>version</code> has been updated, indicating that
+the dat changed.</p>
+<h2 id="reading-blobs">Reading blobs</h2>
+<p>Let&#39;s read the picture of bob and pipe it through picture-tube:
+Thats it! Now let&#39;s see what happened to our dataset. Type <code>dat read</code>
+to see the content of the blob we wrote:</p>
+<pre><code>$ dat read bob -d people | picture-tube -
+</code></pre><p>To be performant, dat doesn&#39;t store blobs inside the datasets.
+Instead they&#39;re kept in a blob-store and referenced using a unique blob key.</p>
+
+        <a class="lastp navlink" href="03-working-with-json.html">Previous: 03-working-with-json</a>
+        <a class="nextp navlink" href="05-dat-clone.html">Next: 05-dat-clone</a>
+    </section>
+
+    <footer class="site-footer">
+      <a href="https://github.com/maxogden/dat">dat on github</a>    </footer>
+  </div>
+</body>
+</html>

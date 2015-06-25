@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+  <title>Get Dat</title>
+  <style>
+    body {
+      font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.65em;
+      font-size: 15px;
+    }
+
+    .site-header {
+      margin: 20px 0;
+      padding: 15px 0;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .site-header-text {
+      font-size: 50px;
+      letter-spacing: 2px;
+      color: #333;
+      line-height: 1em;
+      font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    }
+
+    .site-footer {
+      font-size: 12px;
+      color: #999;
+      margin-top: 20px;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      margin: auto;
+      max-width: 640px;
+    }
+
+    .navlink {
+      display: inline-block;
+      width: 49%;
+    }
+
+    .nextp { text-align: right; }
+
+    code, pre {
+      background: #f5f5f5;
+      border-radius: 2px;
+      font-size: 14px;
+      padding: 3px;
+    }
+
+    pre code { padding: 0;}
+
+    a {
+      color: #08c;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <a class="site-header-text" href="./index.html">Get Dat</a>
+    </header>
+
+    <section class="content">
+
+      <h1 id="delete-a-dat">delete a dat</h1>
+<p>You should now be in the newly initialized dat repository from lesson <code>01</code>.</p>
+<p>Let&#39;s see how to deleting the dat repository and then re-initialize it again.</p>
+<ol>
+<li><p>Run <code>dat destroy</code> to delete the <code>.dat</code> folder.</p>
+</li>
+<li><p>You should now have no <code>.dat</code> folder. You can check this with <code>ls -a</code>.</p>
+</li>
+<li><p>Try to get the status by running <code>dat status</code>. You should get an error <code>This is not a dat repository</code>.</p>
+</li>
+<li><p>Run <code>dat init</code> again. Now try to get the status again by running <code>dat status</code>. This time it should succeed!</p>
+</li>
+</ol>
+
+        <a class="lastp navlink" href="01-init.html">Previous: 01-init</a>
+        <a class="nextp navlink" href="03-working-with-json.html">Next: 03-working-with-json</a>
+    </section>
+
+    <footer class="site-footer">
+      <a href="https://github.com/maxogden/dat">dat on github</a>    </footer>
+  </div>
+</body>
+</html>
